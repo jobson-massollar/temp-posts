@@ -43,7 +43,7 @@ describe('<Posts />', () => {
     })
 
     it('should not render posts', () => {
-        render(<Posts posts={[]}/>)
+        render(<Posts posts={[]} onPrev={jest.fn()} onNext={jest.fn()}/>)
 
         expect(screen.queryAllByRole('img')).toHaveLength(0)  // It must have 0 images
         expect(screen.queryAllByText(/title/)).toHaveLength(0)  // It must have 0 titles (must use RE)

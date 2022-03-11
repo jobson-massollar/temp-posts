@@ -4,7 +4,7 @@ import { Button } from '.'
 
 describe('<Button />', () => {
     it('should render the button text', () => {
-        render(<Button label="Load"/>)
+        render(<Button label="Load" onClick={jest.fn()}/>)
 
         expect.assertions(1)
 
@@ -14,7 +14,7 @@ describe('<Button />', () => {
 
     it('should fire button click', () => {
         const fn = jest.fn()  // Create a mock function
-        render(<Button text='Load' onClick={fn}/>)
+        render(<Button label='Load' onClick={fn}/>)
 
         const button = screen.getByRole('button')
 
@@ -25,7 +25,7 @@ describe('<Button />', () => {
     })
 
     it('should be disabled', () => {
-        render(<Button text="Load" disabled={true}/>)
+        render(<Button label="Load" onClick={jest.fn()} disabled={true}/>)
 
         const button = screen.getByRole('button')
 
@@ -33,7 +33,7 @@ describe('<Button />', () => {
     })
 
     it('should be enabled', () => {
-        render(<Button text="Load" disabled={false}/>)
+        render(<Button label="Load" onClick={jest.fn()} disabled={false}/>)
 
         const button = screen.getByRole('button')
 
@@ -42,7 +42,7 @@ describe('<Button />', () => {
 
     it('should match snapshot', () => {
         const fn = jest.fn()  // Create a mock function
-        const {container} = render(<Button text='Load' onClick={fn}/>)
+        const {container} = render(<Button label='Load' onClick={fn}/>)
 
         expect(container.firstChild).toMatchSnapshot()
     })

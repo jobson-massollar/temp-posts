@@ -3,5 +3,7 @@
 exports[`<Button /> should match snapshot 1`] = `
 <button
   class="button"
-/>
+>
+  Load
+</button>
 `;

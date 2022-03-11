@@ -1,3 +1,5 @@
+import P from 'prop-types'
+
 import './styles.css'
 
 export const SearchResult = ({ search, qty }) => {
@@ -21,4 +23,9 @@ export const SearchResult = ({ search, qty }) => {
         )
     else
         return (<></>)
+}
+
+SearchResult.propTypes = {
+    search: P.bool.isRequired,
+    qty: P.number.isRequired,
 }
