@@ -7,15 +7,15 @@ import { Button } from '../Button';
 
 export const Posts = ({ posts, onPrev, onNext, disablePrev = false, disableNext = false }) =>
     <>
-    <div className="posts">
-    {posts.map(post => (
-        <PostCard key={post.id} post={post}/>
-    ))}
-    </div>
-    <div className="button-container">
-        <Button label="Prev Posts" onClick={onPrev} disabled={disablePrev}/>
-        <Button label="Next Posts" onClick={onNext} disabled={disableNext}/>
-    </div>
+        <div className="posts">
+            {posts.map(post => (
+                <PostCard key={post.id} post={post}/>
+        ))}
+        </div>
+        <div className="button-container">
+            <Button label="Prev Posts" onClick={onPrev} disabled={disablePrev}/>
+            <Button label="Next Posts" onClick={onNext} disabled={disableNext}/>
+        </div>
     </>
 
     Posts.propTypes = {

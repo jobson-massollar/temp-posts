@@ -8,7 +8,9 @@ module.exports = {
     extends: [
         "eslint:recommended",
         "plugin:react/recommended",
-        'plugin:react-hooks/recommended',
+        "plugin:react-hooks/recommended",
+        "plugin:jest/recommended",
+        "plugin:jest/style",
     ],
     parserOptions: {
         "ecmaFeatures": {
@@ -23,11 +25,11 @@ module.exports = {
     ],
     settings: {
         react: {
-          version: 'detect',
+          version: "detect",
         },
     },
     rules: {
-        'react/react-in-jsx-scope': 'off',
+        "react/react-in-jsx-scope": "off",
         "jest/no-disabled-tests": "warn",
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
